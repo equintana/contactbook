@@ -1,9 +1,31 @@
-# SQLite version 3.x
-#   gem 'activerecord-jdbcsqlite3-adapter'
-#
 # Configure Using Gemfile
 # gem 'activerecord-jdbcsqlite3-adapter'
 #
+# default: &default
+#   adapter: jdbcpostgresql
+#   encoding: unicode
+#   host: localhost
+#   username: erlinis
+#   password:
+
+# development:
+#   <<: *default
+#   database: contact_dev
+
+# # Warning: The database defined as "test" will be erased and
+# # re-generated from your development database when you run "rake".
+# # Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: contact_test
+
+# production:
+#   <<: *default
+#   database: contact_production
+
+# SQLite version 3.x
+  # gem 'activerecord-jdbcsqlite3-adapter'
+
 default: &default
   adapter: jdbcsqlite3
 
@@ -11,9 +33,6 @@ development:
   <<: *default
   database: db/development.sqlite3
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
   <<: *default
   database: db/test.sqlite3

@@ -1,0 +1,43 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.5.0_24 (Apple Inc.)
+Built-By: simone
+Build-Jdk: 1.5.0_24
+Implementation-Title: Commons Digester
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache
+Implementation-Version: 2.1
+Specification-Title: Commons Digester
+Specification-Vendor: The Apache Software Foundation
+Specification-Version: 2.1
+X-Compile-Source-JDK: 1.5
+X-Compile-Target-JDK: 1.5
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Import-Package: javax.xml.parsers,javax.xml.validation,org.apache.comm
+ ons.beanutils,org.apache.commons.logging,org.apache.commons.logging.i
+ mpl,org.w3c.dom,org.xml.sax,org.xml.sax.helpers
+Bnd-LastModified: 1284884120880
+Export-Package: org.apache.commons.digester.annotations;version="2.1",
+ org.apache.commons.digester.plugins;version="2.1",org.apache.commons.
+ digester.parser;version="2.1",org.apache.commons.digester;version="2.
+ 1",org.apache.commons.digester.xmlrules;version="2.1",org.apache.comm
+ ons.digester.annotations.rules;version="2.1",org.apache.commons.diges
+ ter.annotations.internal;version="2.1",org.apache.commons.digester.an
+ notations.providers;version="2.1",org.apache.commons.digester.annotat
+ ions.utils;version="2.1",org.apache.commons.digester.substitution;ver
+ sion="2.1",org.apache.commons.digester.annotations.spi;version="2.1",
+ org.apache.commons.digester.annotations.handlers;version="2.1",org.ap
+ ache.commons.digester.annotations.reflect;version="2.1",org.apache.co
+ mmons.digester.plugins.strategies;version="2.1"
+Bundle-Version: 2.1
+Bundle-Description: The Digester package lets you configure an XML to 
+ Java object mapping module    which triggers certain actions called r
+ ules whenever a particular     pattern of nested XML elements is reco
+ gnized.
+Bundle-Name: Commons Digester
+Bundle-DocURL: http://commons.apache.org/digester/
+Bundle-ManifestVersion: 2
+Bundle-Vendor: The Apache Software Foundation
+Bundle-SymbolicName: org.apache.commons.digester
+Tool: Bnd-0.0.255
+

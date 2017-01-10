@@ -1,31 +1,32 @@
 
 lib_root = __dir__
-Dir.entries("#{lib_root}/jasperreports").each do |lib|
-  require "#{lib_root}/jasperreports/#{lib}" if lib =~ /\.jar$/
+dependencies = ['jasperreports', 'commons-logging','commons-collections', 'commons-digester', 'com.lowagie.text']
+dependencies.each do |dependency_name|
+  Dir.entries("#{lib_root}/#{dependency_name}").each do |lib|
+    require "#{lib_root}/#{dependency_name}/#{lib}" if lib =~ /\.jar$/
+  end
 end
 
-Dir.entries("#{lib_root}/commons-logging").each do |lib|
-  require "#{lib_root}/commons-logging/#{lib}" if lib =~ /\.jar$/
-end
 require 'java'
+require 'jdbc/sqlite3'
 
 java_import Java::net::sf::jasperreports::engine::JasperFillManager
 java_import Java::net::sf::jasperreports::engine::JasperExportManager
 java_import Java::net::sf::jasperreports::engine::JRResultSetDataSource
 
 class JasperReport
-  DIR = "#{Rails.root}/app/reports"
+
+  LIB_ROOT = __dir__
+  DIR = "#{LIB_ROOT}/../app/reports"
 
   def initialize(report, query, params = nil)
-    # require 'pry'
-    # binding.pry
-    ActiveRecord::Base.establish_connection(
-      :adapter => 'jdbcsqlite3',
-      :database => "db/development"
-    )
     @model = report
     @report_params = params
-    @conn = ActiveRecord::Base.connection.jdbc_connection
+
+    Java::org.sqlite.JDBC
+    url = 'jdbc:sqlite:/Users/erlinis/projects/contactbook/db/development.sqlite3'
+    @conn = java.sql.DriverManager.getConnection(url)
+    # @conn = ActiveRecord::Base.connection.jdbc_connection
     @query = query
   end
 

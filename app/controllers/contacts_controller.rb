@@ -62,7 +62,7 @@ class ContactsController < ApplicationController
   end
 
   def report
-    respond_to_report('invoice', 'select * from contacts', 'contacts.pdf')
+    respond_to_report('Invoice', 'select * from contacts', 'contacts.pdf')
   end
 
   private

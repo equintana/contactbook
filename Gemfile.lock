@@ -8,7 +8,6 @@ GIT
     activerecord-jdbcsqlite3-adapter (5.0)
       activerecord-jdbc-adapter (~> 5.0)
       jdbc-sqlite3 (>= 3.7.2, < 3.9)
-    jdbc-mysql (5.1.31)
     jdbc-sqlite3 (3.7.2.1)
 
 GEM
@@ -187,7 +186,6 @@ DEPENDENCIES
   activerecord-jdbcsqlite3-adapter!
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
-  jdbc-mysql!
   jquery-rails
   listen
   pry
